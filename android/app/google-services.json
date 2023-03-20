@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "121577411666",
+    "project_id": "money-tracker-ept",
+    "storage_bucket": "money-tracker-ept.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:121577411666:android:8c76ed0a732c87817afb8b",
+        "android_client_info": {
+          "package_name": "com.example.owe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "121577411666-osgl9qqh9qs1d6263e1h231i4j3kqq81.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtEwLQ3blzNQB0DeMjH6lba0lRjpA6UAE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "121577411666-osgl9qqh9qs1d6263e1h231i4j3kqq81.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
