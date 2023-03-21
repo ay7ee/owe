@@ -1,9 +1,6 @@
 workflows:
   main:
     name: Build IPA
-    environment:
-      flutter: latest
-      xcode: latest
     scripts:
       - echo "Building the app"
       - flutter clean
