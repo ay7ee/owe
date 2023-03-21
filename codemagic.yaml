@@ -1,15 +1,15 @@
 workflows:
-  ios:
-    name: iOS Workflow
+  main:
+    name: Build IPA
     environment:
+      flutter: latest
       xcode: latest
     scripts:
-      - |
-        set -eo pipefail
-        xcodebuild -workspace YourProject.xcworkspace -scheme YourScheme -sdk iphoneos -configuration Release -archivePath build/YourProject.xcarchive archive | xcpretty
-        xcodebuild -exportArchive -archivePath build/YourProject.xcarchive -exportPath build -exportOptionsPlist ExportOptions.plist | xcpretty
-      - |
-        cd build
-        ls
+      - echo "Building the app"
+      - flutter clean
+      - flutter build ios --release --no-codesign
+      - echo "Exporting the IPA file"
+      - flutter build ios --release --no-codesign --build-number $BUILD_NUMBER --build-name $BUILD_NAME --export-options-plist exportOptions.plist
+      - mv build/ios/archive/Runner.ipa $FCI_BUILD_DIR/Runner.ipa
     artifacts:
-      - build/*.ipa
+      - build/ios/outputs/ipa/Runner.ipa
