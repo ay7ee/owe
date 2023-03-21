@@ -9,4 +9,4 @@ workflows:
       - flutter build ios --release --no-codesign --build-number $BUILD_NUMBER --build-name $BUILD_NAME --export-options-plist exportOptions.plist
       - mv build/ios/archive/Runner.ipa $FCI_BUILD_DIR/Runner.ipa
     artifacts:
-      - build/ios/outputs/ipa/Runner.ipa
+      - build/ios/outputs/ipa/Runner.ip
