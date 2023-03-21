@@ -5,7 +5,6 @@ workflows:
       - echo "Building the app"
       - flutter clean
       - flutter build ios --release --no-codesign
-      - echo "Exporting the IPA file"
-      - mv build/ios/archive/Runner.ipa $FCI_BUILD_DIR/Runner.ipa
+      - echo "Exporting the IPA file"  
     artifacts:
       - build/ios/outputs/ipa/Runner.ipa
