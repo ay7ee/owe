@@ -1,8 +1,15 @@
 workflows:
-  build:
+  ios:
+    name: iOS Workflow
+    environment:
+      xcode: latest
     scripts:
-      - echo "Building iOS app..."
-      - xcodebuild -workspace ios/Runner.xcworkspace -scheme Runner -sdk iphoneos -configuration Release -archivePath build/Runner.xcarchive archive
-      - xcodebuild -exportArchive -archivePath build/Runner.xcarchive -exportOptionsPlist exportOptions.plist -exportPath build --force
+      - |
+        set -eo pipefail
+        xcodebuild -workspace YourProject.xcworkspace -scheme YourScheme -sdk iphoneos -configuration Release -archivePath build/YourProject.xcarchive archive | xcpretty
+        xcodebuild -exportArchive -archivePath build/YourProject.xcarchive -exportPath build -exportOptionsPlist ExportOptions.plist | xcpretty
+      - |
+        cd build
+        ls
     artifacts:
       - build/*.ipa
