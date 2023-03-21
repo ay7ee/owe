@@ -1,0 +1,14 @@
+workflows:
+  build-ios:
+    name: Build iOS
+    scripts:
+      - name: Build and Package iOS App
+        script: |
+          flutter build ios --release --no-codesign
+          brew install ios-deploy
+          cd build/ios/iphoneos
+          mkdir Payload
+          mv Runner.app Payload/
+          zip -r app.ipa Payload/
+    artifacts:
+      - app.ipa
